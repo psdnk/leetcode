@@ -41,7 +41,7 @@ public class Minesweeper {
     }
 
     private  void dfs(int i, int j, int m, int n, char[][] board, int[][] dir, boolean[][] visited) {
-        if (i < 0 || i >= m || j < 0 || j >= m || visited[i][j] || board[i][j] == 'M') return;
+        if (i < 0 || i >= m || j < 0 || j >= n || visited[i][j] || board[i][j] == 'M') return;
         visited[i][j] = true;
         int mines = 0;
         for (int[] d : dir) {
