@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class AllElementsinTwoBinarySearchTrees1305 {
+    List<Integer> ret  = new ArrayList<>();
+    public List<Integer> getAllElements(TreeNode root1, TreeNode root2) {
+        helper(root1,ret);
+        helper(root2,ret);
+        Collections.sort(ret);
+        return ret;
+    }
+    public void helper(TreeNode root, List<Integer> ret){
+        if (root!= null){
+            ret.add(root.val);
+            helper(root.left,ret);
+            helper(root.right,ret);
+        }
+    }
+}
